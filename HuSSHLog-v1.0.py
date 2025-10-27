@@ -96,9 +96,22 @@ def read_last_qsos(logfile, count=10):
 def curses_main(stdscr, logfile):
     curses.curs_set(1)
     stdscr.keypad(True)
-    curses.start_color()
-    if curses.can_change_color():
-        curses.use_default_colors()
+
+    # Start colors
+    if curses.has_colors():
+        curses.start_color()
+
+    # Check for 256-color support
+    if curses.has_colors() and curses.COLORS >= 256:
+        can_use_extended_colors = True
+    else:
+        can_use_extended_colors = False
+
+    # If terminal doesn't support extended colors, filter out 256-color palettes
+    if not can_use_extended_colors:
+        # Only keep palettes that use basic 0-7 color numbers
+        global PALETTES
+        PALETTES = [p for p in PALETTES if max(p["bg"], p["label"], p["highlight"], p["input"], p["log"], p["footer"]) <= 7]
 
     current_palette = 0
 
@@ -200,8 +213,9 @@ def curses_main(stdscr, logfile):
             break
         elif 32 <= key <= 126:
             inputs[current_field] += chr(key)
-        elif key in (curses.KEY_BACKSPACE, 127):
+        elif key in (curses.KEY_BACKSPACE, 127, 8):
             inputs[current_field] = inputs[current_field][:-1]
+
 
 def main():
     if len(sys.argv) < 2:
