@@ -6,3 +6,11 @@ Tried to capture the vibes of DOS loggers, while still making it platform agnost
 Six included color pallets (Cyan, Amber, Red, Grey, DOS-Amber, and DOS-Green)
 
 Expect some UI tweaking, and additions such as POTA and Field Day templates.
+
+
+## Information
+Syntax: `HuSSHLog.py <logbook_name>`
+
+> [!NOTE]
+> The logbook.csv and ADIF exports will be in the current directory. Its recommended to create a directory for this program.
+
