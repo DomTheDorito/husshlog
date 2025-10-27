@@ -16,7 +16,7 @@ Syntax: `HuSSHLog.py <logbook_name>`
 > The logbook.csv and ADIF exports will be in the same directory as the program. It is recommended to create a seperate directory for this program.
 
 > [!IMPORTANT]
-> If atempting to run on Windows, you will need to build [python-curses-build](https://github.com/cgohlke/python-curses-build) as the official module is not supported on Windows.
+> If attempting to run on Windows, you will need to build [python-curses-build](https://github.com/cgohlke/python-curses-build) as the official module is not supported on Windows.
 
 
 ## Looking forward
