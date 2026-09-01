@@ -1,5 +1,5 @@
 # HuSSHLog
-Pronounced "Hush Log", this is a super small, lightweight, ans basic terminal based ham radio logger built in Python. Designed with SSH in mind!
+Pronounced "Hush Log", this is a super small, lightweight, and basic terminal based ham radio logger built in Python. Designed with SSH in mind!
 
 Tried to capture the vibes of DOS loggers, while still making it platform agnostic. There is six included color pallets 
 (Cyan, Amber, Red, Grey, DOS-Amber, and DOS-Green), and documentation for creating your own is located [here](https://github.com/DomTheDorito/husshlog/blob/main/custom_palettes.md)
